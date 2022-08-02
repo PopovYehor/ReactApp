@@ -11,7 +11,7 @@ function App() {
     <Header title = "My Header" menuActive = {activeMenu}/>
     <div className = "container">
       <LeftMenu item ="Menu item"/>
-      <Content text = 'Main text'/>
+      <Content text = 'Content'/>
     </div>
     </div>
   );
