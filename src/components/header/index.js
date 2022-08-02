@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function Header (props){
-   console.log(props)
  return (
     <div className = "header">
       <div className="header-awesome"><div onClick={props.menuActive}><FontAwesomeIcon icon={faBars}/></div></div>
