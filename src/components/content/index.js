@@ -1,4 +1,5 @@
 import "./style.css"
+
 function Content (props){
  return (
     <div className = "content">
