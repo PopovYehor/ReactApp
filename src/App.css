@@ -1,7 +1,36 @@
-.container{
+.App{
+    background-color: rgb(163 142 91 / 63%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+    background-color: #ffe4c4d1;
+    margin-top: 50px;
+    border-radius: 40px;
+}
+.login, .add-do{
+    width: 80%;
+    height: 50px;
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 90%;
-    background-color: antiquewhite;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+.to-do-list-container{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 0;
 }
