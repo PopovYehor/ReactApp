@@ -1,26 +1,19 @@
 import './App.css';
-import Title from './components/title';
-import Input from './components/input';
-import Button from './components/button';
-import List from './components/list';
+import React, {useState} from 'react';
+import CheckUser from './components/CheckUser';
+import ToDoList from './components/ToDoList';
+import {usersData} from "./helper/userData"
 function App() {
+  let [isName, changeIsName] = useState(false)
+  const checkName = (selector)=>{
+    let elem = document.querySelector(selector).value
+    if (elem === usersData[0].name) {changeIsName(true)}
+  }
   return (
-    
     <div className='App'>
       <div className='container'>
-          <Title classContainer = "title-container" titleClass= "title" titleText= "Мои заметки"/>
-        <div className='login'>
-          <Input class = "login-area input-item" placeholder = "Введите имя пользователя"></Input>
-          <Button class = "btn-login btn"  text = "Вход"/>
-        </div>
-        <div className='add-do'>
-          <Input class = 'add-do-area input-item' placeholder = 'Добавить заметку'/>
-          <Button class='btn-add btn' text ="+"/>
-        </div>
-        <div className='to-do-list-container'>
-            <Title classContainer='title-list-container' titleClass='list-title' titleText='Список дел пользователя' />
-            <List/>
-        </div>
+         <CheckUser checkName={()=>checkName('.login-area')}/>
+         {isName ? <ToDoList/> : null}
       </div>
     </div>
   );

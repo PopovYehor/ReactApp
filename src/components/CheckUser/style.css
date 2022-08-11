@@ -1,0 +1,12 @@
+.check-user-wrap{
+    width: 80%;
+}
+.login, .add-do{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}

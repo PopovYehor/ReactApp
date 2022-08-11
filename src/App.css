@@ -16,21 +16,4 @@
     margin-top: 50px;
     border-radius: 40px;
 }
-.login, .add-do{
-    width: 80%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 10px;
-}
-.to-do-list-container{
-    width: 90%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 20px 0;
-}
+
