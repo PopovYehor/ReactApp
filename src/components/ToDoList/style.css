@@ -1,32 +1,13 @@
-.to-do-list-container{
-    width: 90%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 20px 0;
+.to-do-list-wrap{
+    width: 80%;
 }
-.do-list{
+
+.login, .add-do{
     width: 100%;
-    height: 100%;
+    height: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    background-color: #ffe4c4a8;
-    margin: 10px;
-    border-radius: 25px;
-}
-.list{
-    margin: 10px 0 10px 10px;
-}
-.list-item{
-    padding: 10px 0 10px 0;
-    font-size: 150%;
-    word-break: break-word;
-    margin-left: 40px;
-}
-.done{
-    text-decoration: line-through;
+    align-items: center;
+    margin-top: 10px;
 }

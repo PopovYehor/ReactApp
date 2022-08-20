@@ -1,19 +1,31 @@
 import "./style.css"
-import Title from "../title"
-import React, {useEffect, useState} from 'react'
-import Check from './check/index'
+import Button from "../CheckUser/button"
+import Input from "../CheckUser/input"
+import React, {useState} from 'react'
+import List from "./list"
 import {usersData} from "../../helper/userData"
 
 function ToDoList (){
-    const [users] = useState(usersData)
+    let userID = sessionStorage.getItem('userID')
+    const [user, setUser] = useState(usersData[userID])
+    const [textAddDo, setTextAddDo] = useState('')
+    const addTask = (selector)=>{
+        console.log(user)
+        let elem = document.querySelector(selector).value
+        user.task.push(elem)
+        user.check.push(false)
+        sessionStorage.setItem('userTask', JSON.stringify(user.task))
+        sessionStorage.setItem('userCheck', JSON.stringify(user.check))
+        setUser()
+    }
+
     return (
-        <div className='to-do-list-container'>
-            <Title classContainer='title-list-container' titleClass='list-title' titleText={`Список дел пользователя ${users[0].name}`} />
-            <div className="do-list">
-                <ol className="list">
-                    {users[0].task.map((elem, i )=> <li key={i} className={users[0].check[i] === false ? "list-item" : "list-item done"}>{elem} <Check check= {users[0].check[i] === true}/></li> ) }
-                </ol>
+        <div className="to-do-list-wrap">
+            <div className='add-do'>
+                <Input value = {textAddDo} func = {(e)=>setTextAddDo(e.target.value)} class = 'add-do-area input-item' placeholder = 'Добавить заметку'/>
+                <Button class='btn-add btn' func = {()=>{addTask('.add-do-area ')}} text ="+"/>
             </div>
+                <List/>
         </div>
     )
 }
