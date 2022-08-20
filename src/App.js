@@ -6,7 +6,7 @@ import {usersData} from "./helper/userData"
 
 function App() {
   const [isName, changeIsName] = useState(false)
-  
+  const userSignIn = sessionStorage.getItem('userName')
   const checkName = (selector)=>{
     let userValue = document.querySelector(selector).value
     for (let i = 0; i< usersData.length; i++){
@@ -25,8 +25,8 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-         <CheckUser checkName={()=>checkName('.login-area')}/>
-         {isName ? <ToDoList/> : null}
+        {isName || userSignIn ? <ToDoList/>
+        : <CheckUser checkName={()=>checkName('.login-area')}/>}
       </div>
     </div>
   );
