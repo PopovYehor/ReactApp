@@ -1,18 +1,5 @@
-.App{
-    background-color: rgb(163 142 91 / 63%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html, .App{
     font-family: Georgia, serif;
 }
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 60%;
-    background-color: #ffe4c4d1;
-    margin-top: 50px;
-    border-radius: 40px;
-}
+
 

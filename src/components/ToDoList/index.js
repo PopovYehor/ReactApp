@@ -18,7 +18,6 @@ function ToDoList (){
         setUserCheck(array => [...array, false])
         usersData[userID].task.push(text)
         usersData[userID].check.push(false)
-        console.log(usersData[userID])
         sessionStorage.setItem('userTask', JSON.stringify(usersData[userID].task))
         sessionStorage.setItem('userCheck', JSON.stringify(usersData[userID].check))
     }

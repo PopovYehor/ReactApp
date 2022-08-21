@@ -1,4 +1,5 @@
 import './App.css';
+import './style.css'
 import React, {useState} from 'react';
 import CheckUser from './components/CheckUser';
 import ToDoList from './components/ToDoList';
