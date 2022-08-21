@@ -25,11 +25,15 @@ function ToDoList (){
 
     const changeCheck = (i)=>{
         setUserCheck(item =>{
-            return item.map((elem, j)=>{
-                return i === j ? elem = !elem : elem = elem
+            return item.map((element, j)=>{
+                return i === j ? element = !element : element = element
             })
         })
-        sessionStorage.setItem('userCheck', JSON.stringify(isUserCheck))
+        const changeArrCheck = isUserCheck.map((element, j)=>{
+            return i === j ? element = !element : element = element
+        })
+        usersData[userID].check = changeArrCheck
+        sessionStorage.setItem('userCheck', JSON.stringify(changeArrCheck))
     }
     return (
         <div className="to-do-list-wrap">
