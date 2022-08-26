@@ -5,4 +5,12 @@ let usersData = [
     {id: 2, name: 'Вася', task: ['Быть Васей', 'Сходить на работу', 'Получить зарплату', 'Выпить пиво'], check: [true, false, false, true]},
 ]
 
-export {usersData}
+
+const newUser = {
+    id: '',
+    name: '',
+    task: [],
+    check: []
+}
+
+export {usersData, newUser}

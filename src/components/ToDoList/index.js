@@ -16,10 +16,16 @@ function ToDoList (){
     const addTask = (text)=>{
         setUserTask(array => [...array, text])
         setUserCheck(array => [...array, false])
-        usersData[userID].task.push(text)
-        usersData[userID].check.push(false)
-        sessionStorage.setItem('userTask', JSON.stringify(usersData[userID].task))
-        sessionStorage.setItem('userCheck', JSON.stringify(usersData[userID].check))
+        usersData.some(elem => {
+            if (elem.id == userID){
+                elem.task.push(text)
+                elem.check.push(false)
+            }
+        })
+        const task = [...isUserTask, text]
+        const check = [...isUserCheck, false]
+        sessionStorage.setItem('userTask', JSON.stringify(task))
+        sessionStorage.setItem('userCheck', JSON.stringify(check))
     }
 
     const changeCheck = (i)=>{
@@ -31,7 +37,11 @@ function ToDoList (){
         const changeArrCheck = isUserCheck.map((element, j)=>{
             return i === j ? element = !element : element = element
         })
-        usersData[userID].check = changeArrCheck
+        usersData.some(elem => {
+            if (elem.id == userID){
+                elem.check = changeArrCheck
+            }
+        })
         sessionStorage.setItem('userCheck', JSON.stringify(changeArrCheck))
     }
     return (

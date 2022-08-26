@@ -3,24 +3,33 @@ import './style.css'
 import React, {useState} from 'react';
 import CheckUser from './components/CheckUser';
 import ToDoList from './components/ToDoList';
-import {usersData} from "./helper/userData"
+import {usersData, newUser} from "./helper/userData"
 
 function App() {
   const [isName, changeIsName] = useState(false)
   const userSignIn = sessionStorage.getItem('userName')
   const checkName = (selector)=>{
     let userValue = document.querySelector(selector).value
-    for (let i = 0; i< usersData.length; i++){
-      if (userValue === usersData[i].name) {
-        sessionStorage.setItem('userName', usersData[i].name)
-        sessionStorage.setItem('userID', usersData[i].id)
-        let userID = sessionStorage.getItem('userID')
-        sessionStorage.setItem('userTask', JSON.stringify(usersData[userID].task))
-        sessionStorage.setItem('userCheck', JSON.stringify(usersData[userID].check))
+    let UserDataElement = ''
+    usersData.some( elem => {if (elem.name === userValue) UserDataElement = elem})
+      if (UserDataElement){
+        sessionStorage.setItem('userName', UserDataElement.name)
+        sessionStorage.setItem('userID', UserDataElement.id)
+        sessionStorage.setItem('userTask', JSON.stringify(UserDataElement.task))
+        sessionStorage.setItem('userCheck', JSON.stringify(UserDataElement.check))
         changeIsName(true)
-        break
       }
-    }
+      else{
+        newUser.name = userValue
+        sessionStorage.setItem('userName', newUser.name)
+        newUser.id = Date.now()
+        sessionStorage.setItem('userID', newUser.id)
+        sessionStorage.setItem('userTask', JSON.stringify(newUser.task))
+        sessionStorage.setItem('userCheck', JSON.stringify(newUser.check))
+        usersData.push(newUser)
+        changeIsName(true)
+      }
+      
   }
   
   return (
