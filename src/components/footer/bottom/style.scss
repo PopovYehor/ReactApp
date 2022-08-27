@@ -1,0 +1,24 @@
+@import "../../../style.scss";
+.footer-bottom-wrap{
+    width: 100%;
+    height: 60px;
+    background-color: #0b4b5a;
+    display: flex;
+    justify-content: center;
+    .footer-bottom-container{
+      width: $container-width;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .footer-bottom-item{
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        .footer-bottom-item-description{
+          color: #8adcf0;
+          font-size: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }

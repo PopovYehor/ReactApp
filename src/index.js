@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { ContextUser, ContextTask } from "store/context";
 import {fetchProduct} from "./helpers/product"
 
-fetchProduct()
+/* fetchProduct() */
 function Init() {
     const [user, setUser] = useState({})
     const [task, setTask] = useState([])
