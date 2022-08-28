@@ -1,0 +1,83 @@
+.basket-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 275px;
+    margin-bottom: 30px;
+    .item-img{
+        width: 195px;
+        border: 1px solid #f1f0f0;
+        box-shadow: 0 0 10px #b6babd;
+        border-radius: 15px;
+        padding: 10px;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .item-title{
+        width: 370px;
+        .title-item{
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+        .item-description{
+            font-size: 18px;
+        }
+    }
+    .count-basket{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .count-to-basket{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background-color: #f1f0f0;
+            font-size: 20px;
+            transition: all .5s;
+        }
+        .count-to-basket:hover{
+            background-color: #dbdbdb;
+        }    
+        .count-to-basket:nth-child(2){
+            margin-left: 20px;
+        }
+        .count-to-basket-item{
+            padding: 0 10px 0 10px;
+            font-size: 27px;
+        }
+    }
+    .basket-price{
+        display: flex;
+        align-items: center;
+        .price{
+            font-size: 28px;
+            font-weight: 600;
+            color: #7db122;
+        }
+    }
+    .delete-from-basket{
+        display: flex;
+        align-items: center;
+        .delete-from-basket-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background-color: #f1f0f0;
+            font-size: 20px;
+            transition: all .5s;
+        }
+        .elete-from-basket-btn:hover{
+            background-color: #dbdbdb;
+        }   
+    }
+}
