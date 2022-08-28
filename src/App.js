@@ -1,30 +1,44 @@
 import React from "react";
 import './style.scss'
+import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll } from "store/context";
+import { useEffect, useContext } from "react";
+import {useRoutes} from "react-router-dom"
+import { fetchContext } from "./helpers/fetchContext";
 
-import Header from "./components/header";
-import PromoSlide from "./components/promo-slide";
-import MainCatalog from "./components/catalog";
-import Sale from "./components/catalog/sale";
-import Product from "./components/product";
-import Footer from "./components/footer";
-
+import MainView from "./view/main";
+import CatalogView from "./view/catalog";
+import ElectronicsView from "./view/electronics";
+import JeweleryView from "./view/jewerely";
+import ManView from "./view/manClothing";
+import WomanView from "./view/womanClothing";
+import BasketView from "./view/basket";
+import ProductView from "./view/product";
 const App = () => {
+    const [jewelery, setJewelery] = useContext(ContextJewelery)
+    const [electronic, setElectronic] = useContext(ContextElectronic)
+    const [man, setMan] = useContext(ContextMan)
+    const [woman, setWoman] = useContext(ContextWoman)
+    const [allProduct, setAllProduct] = useContext(ContextAll)
 
-    
-    return (
-         <div className="container-page">
-            <Header/>
-            {/* <PromoSlide/> */}
-            
-            <div className="main-wrap">
-                {/* <MainCatalog/>
-                <Sale/> */}
-                <Product/>
-            </div>
+    useEffect(()=>{
+        fetchContext('https://fakestoreapi.com/products/category/electronics', setElectronic)
+        fetchContext('https://fakestoreapi.com/products/category/jewelery', setJewelery)
+        fetchContext(`https://fakestoreapi.com/products/category/men's clothing`, setMan)
+        fetchContext(`https://fakestoreapi.com/products/category/women's clothing`, setWoman)
+        fetchContext('https://fakestoreapi.com/products', setAllProduct)
+    }, [])
 
-            <Footer/>
-         </div>
-    )
+    let router = useRoutes([
+        { path: "/", element: <MainView/> },
+        { path: "/catalog", element: <CatalogView/> },
+        { path: "/electronics", element: <ElectronicsView/> },
+        { path: "/jewelery", element: <JeweleryView/> },
+        { path: "/men", element: <ManView/> },
+        { path: "/women", element: <WomanView/> },
+        { path: "/basket", element: <BasketView/> },
+        { path: "/product/:id", element: <ProductView/> },
+        ])
+    return router
 }
 
 export default App;

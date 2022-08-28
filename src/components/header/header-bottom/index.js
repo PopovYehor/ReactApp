@@ -1,21 +1,26 @@
 import "./style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass, faTags, faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom"
+import {useContext} from "react"
+import {ContextCartCount} from "store/context"
 function HeaderBottom (){
+    const [basketCount, setBasketCount] = useContext(ContextCartCount)
     return(
 <div className="header-bottom-wrap">
     <div className="header-bottom-container">
         <div className="shop-title-wrap">
-            <h1 className="shop-title">leo shop</h1>
+            <Link className="shop-title" to="/">leo shop</Link>
         </div>
         <div className="rout-filter-items">
             <div className="rout-filter-top ">
-                <a className="filter-item">electronics</a>
-                <a className="filter-item">jewelery</a>
+                <Link className="filter-item" to="/catalog">Catalog</Link>
+                <Link className="filter-item" to="/electronics">electronics</Link>
+                <Link className="filter-item" to="/jewelery">jewelery</Link>
             </div>
             <div className="rout-filter-bottom">
-                <a className="filter-item">men's clothing</a>
-                <a className="filter-item">women's clothing</a>
+                <Link className="filter-item" to="/men">men's clothing</Link>
+                <Link className="filter-item" to="/women">women's clothing</Link>
             </div>
         </div>
         <div className="search-page-wrap">
@@ -24,8 +29,8 @@ function HeaderBottom (){
         </div>
         <div className="cart-wrap">
             <button className="sale-cart"><FontAwesomeIcon icon={faTags} /></button>
-            <button className="sale-cart"><FontAwesomeIcon icon={faCartShopping}  /></button>
-            <span className="cart-count"> cart (0)</span>
+            <Link className="sale-cart" to='/basket'><FontAwesomeIcon icon={faCartShopping} /></Link>
+            <Link className="cart-count" to='/basket'> cart ({basketCount})</Link>
         </div>
     </div>
 </div>

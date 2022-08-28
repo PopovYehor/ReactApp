@@ -12,10 +12,19 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      .link{
+        text-decoration: none;
+        color: black
+      }
       .shop-title-wrap{
         width: 170px;
-        font-size: 16px;
-        text-transform: uppercase;
+        .shop-title{
+          font-size: 28px;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: initial;
+        }
       }
       .rout-filter-items{
         width: 400px;
@@ -32,6 +41,8 @@
             width: 200px;
             margin-top: 10px;
             text-align: center;
+            text-decoration: none;
+            color: initial;
           }
         }
         
@@ -61,6 +72,9 @@
         justify-content: space-between;
         align-items: center;
         .sale-cart{
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 35px;
           height: 35px;
           background-color: #7db122;
@@ -76,6 +90,8 @@
           text-transform: uppercase;
           font-weight: 900;
           margin-left: 10px;
+          text-decoration: none;
+          color: initial;
         }
       }
     }

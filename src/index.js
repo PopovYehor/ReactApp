@@ -1,21 +1,40 @@
 import React, { useState } from "react";
 import App from "./app";
 import ReactDOM from 'react-dom';
-import { ContextUser, ContextTask } from "store/context";
-import {fetchProduct} from "./helpers/product"
-
-/* fetchProduct() */
+import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll, ContextProductId,  ContextCartCount, ContextBasketItems } from "store/context";
+import {BrowserRouter as Router} from "react-router-dom"
 function Init() {
-    const [user, setUser] = useState({})
-    const [task, setTask] = useState([])
+    const [jewelery, setJewelery] = useState([])
+    const [electronic, setElectronic] = useState([])
+    const [man, setMan] = useState([])
+    const [woman, setWoman] = useState([])
+    const [allProduct, setAllProduct] = useState([])
+    const [id, setId] = useState(0)
+    const [basketCount, setBasketCount] = useState(0)
+    const [basketItems, setBasketItems] = useState([])
+
     return (
-        <React.StrictMode>
-            <ContextUser.Provider value={{user, setUser}}>
-                <ContextTask.Provider value={{task, setTask}}>
-                    <App/>
-                </ContextTask.Provider>
-            </ContextUser.Provider>
-        </React.StrictMode>
+            <React.StrictMode>
+            <Router>
+            <ContextJewelery.Provider value={[jewelery, setJewelery]}>
+                <ContextElectronic.Provider value={[electronic, setElectronic]}>
+                    <ContextMan.Provider value={[man, setMan]}>
+                        <ContextWoman.Provider value={[woman, setWoman]}>
+                            <ContextAll.Provider value={[allProduct, setAllProduct]}>
+                                <ContextProductId.Provider value={[id, setId]}>
+                                    <ContextCartCount.Provider value={[basketCount, setBasketCount]}>
+                                        <ContextBasketItems.Provider value={[basketItems, setBasketItems]}>
+                                            <App/>
+                                        </ContextBasketItems.Provider>
+                                    </ContextCartCount.Provider>
+                                </ContextProductId.Provider>
+                            </ContextAll.Provider>
+                        </ContextWoman.Provider>
+                    </ContextMan.Provider>
+                </ContextElectronic.Provider>
+            </ContextJewelery.Provider>
+            </Router>
+           </React.StrictMode>
     )
 }
 
