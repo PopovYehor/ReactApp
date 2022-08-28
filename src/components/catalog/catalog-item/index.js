@@ -2,7 +2,7 @@ import "./style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import {ContextProductId, ContextCartCount, ContextBasketItems} from "store/context"
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import {Link} from "react-router-dom"
 function CatalogItem ({data}){
 const [id, setId] = useContext(ContextProductId)

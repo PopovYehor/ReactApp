@@ -3,12 +3,17 @@
     flex-direction: row;
     justify-content: space-between;
     height: 275px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    border: 1px solid #f1f0f0;
+    box-shadow: 0 0 10px #b6babd;
+    padding: 15px;
     .item-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 195px;
         border: 1px solid #f1f0f0;
-        box-shadow: 0 0 10px #b6babd;
-        border-radius: 15px;
+        box-shadow: 0 3px 10px -2px #b6babd;
         padding: 10px;
         img{
             max-width: 100%;
@@ -16,7 +21,7 @@
         }
     }
     .item-title{
-        width: 370px;
+        width: 490px;
         .title-item{
             font-size: 23px;
             margin-bottom: 15px;
