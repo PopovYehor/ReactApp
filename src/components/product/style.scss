@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: center;
     width: $page-width;
-    height: 420px;
     padding: 25px;
     border-top: 1px solid #f1f0f0;
     border-bottom: 1px solid #f1f0f0;
@@ -14,21 +13,20 @@
         width: $container-width;
         height: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
         .description-img{
             display: flex;
             align-items: center;
             justify-content: center;
             width: 35%;
-            height: 100%;
+            max-height: 300px;
             border: 1px solid #f1f0f0;
             box-shadow: 0 0 10px #b6babd;
             border-radius: 15px;
-            padding: 10px;
             img{
                 max-width: 100%;
-                max-height: 100%;
+                max-height: 300px;
+                padding: 10px;
             }
         }
         .main-description-container{
@@ -70,6 +68,9 @@
                     color: #fff;
                     font-size: 16px;
                     transition: all .5s;
+                }
+                .add-to-basket.active{
+                    background-color: #4f7015;
                 }
                 .add-to-basket:hover{
                     background-color: #6c9b1c;

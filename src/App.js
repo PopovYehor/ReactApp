@@ -20,15 +20,21 @@ const App = () => {
     const [woman, setWoman] = useContext(ContextWoman)
     const [allProduct, setAllProduct] = useContext(ContextAll)
 
+    const urlElectronics = 'https://fakestoreapi.com/products/category/electronics'
+    const urlJewelery = 'https://fakestoreapi.com/products/category/jewelery'
+    const urlMan = `https://fakestoreapi.com/products/category/men's clothing`
+    const urlWoman = `https://fakestoreapi.com/products/category/women's clothing`
+    const urlProduct = 'https://fakestoreapi.com/products'
+
     useEffect(()=>{
-        fetchContext('https://fakestoreapi.com/products/category/electronics', setElectronic)
-        fetchContext('https://fakestoreapi.com/products/category/jewelery', setJewelery)
-        fetchContext(`https://fakestoreapi.com/products/category/men's clothing`, setMan)
-        fetchContext(`https://fakestoreapi.com/products/category/women's clothing`, setWoman)
-        fetchContext('https://fakestoreapi.com/products', setAllProduct)
+        fetchContext(urlElectronics, setElectronic)
+        fetchContext(urlJewelery, setJewelery)
+        fetchContext(urlMan, setMan)
+        fetchContext(urlWoman, setWoman)
+        fetchContext(urlProduct, setAllProduct)
     }, [])
 
-    let router = useRoutes([
+    const router = useRoutes([
         { path: "/", element: <MainView/> },
         { path: "/catalog", element: <CatalogView/> },
         { path: "/electronics", element: <ElectronicsView/> },

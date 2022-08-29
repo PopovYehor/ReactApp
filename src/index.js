@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import App from "./app";
 import ReactDOM from 'react-dom';
-import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll, ContextProductId,  ContextCartCount, ContextBasketItems } from "store/context";
+import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll, ContextProductId,  ContextCartCount, ContextBasketItems,ContextHaveProduct } from "store/context";
 import {BrowserRouter as Router} from "react-router-dom"
 function Init() {
     const [jewelery, setJewelery] = useState([])
@@ -12,6 +12,8 @@ function Init() {
     const [id, setId] = useState(0)
     const [basketCount, setBasketCount] = useState(0)
     const [basketItems, setBasketItems] = useState([])
+    const [haveProduct, setHaveProduct] = useState([])
+
 
     return (
             <React.StrictMode>
@@ -24,7 +26,9 @@ function Init() {
                                 <ContextProductId.Provider value={[id, setId]}>
                                     <ContextCartCount.Provider value={[basketCount, setBasketCount]}>
                                         <ContextBasketItems.Provider value={[basketItems, setBasketItems]}>
-                                            <App/>
+                                            <ContextHaveProduct.Provider value={[haveProduct, setHaveProduct]}>
+                                                <App/>
+                                            </ContextHaveProduct.Provider>
                                         </ContextBasketItems.Provider>
                                     </ContextCartCount.Provider>
                                 </ContextProductId.Provider>

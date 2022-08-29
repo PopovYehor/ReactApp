@@ -1,32 +1,36 @@
 import "./style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
-import {ContextProductId, ContextCartCount, ContextBasketItems} from "store/context"
+import {ContextProductId, ContextCartCount, ContextBasketItems, ContextHaveProduct} from "store/context"
 import { useContext} from "react"
 import {Link} from "react-router-dom"
+
 function CatalogItem ({data}){
+    
 const [id, setId] = useContext(ContextProductId)
 const [basketItems, setBasketItems] = useContext(ContextBasketItems)
 const [basketCount, setBasketCount] = useContext(ContextCartCount)
+const [haveProduct, setHaveProduct] = useContext(ContextHaveProduct)
+
 const getId = (e)=>{
     const target = e.target
     setId(target.getAttribute('id'))
 }
 
+const urlProduct = 'https://fakestoreapi.com/products'
+
 const fetchProduct = (id, btn, i)=>{
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`${urlProduct}/${id}`)
         .then(res=>res.json())
         .then(res=>{
             let haveInBasket = basketItems.some(elemArr => elemArr.id == res.id)
             if (!haveInBasket){
-                console.log(res)
                 setBasketItems(item =>[...item, res])
                 btn[i].classList.add('active')
                 setBasketCount(basketCount+1)
+                setHaveProduct(item => [...item, id])
                 }
                 else{setBasketItems(basketItems)}
-            console.log(basketItems)
-            console.log(basketCount)
         })
 }
 
@@ -67,7 +71,7 @@ return(
                         <span className="catalog-item-price">{elem.price} $</span>
                     </div>
                     <div className="catalog-item-buy" id={elem.id}>
-                        <button id={elem.id} className="catalog-item-buy-btn" onClick={(e)=> addToBasket(e)}><FontAwesomeIcon icon={ faBasketShopping} /></button>
+                        <button id={elem.id} className={haveProduct.some(element => element == elem.id) ? "catalog-item-buy-btn active" : "catalog-item-buy-btn"} onClick={(e)=> addToBasket(e)}><FontAwesomeIcon icon={ faBasketShopping} /></button>
                     </div>
                 </div>
             </div>
