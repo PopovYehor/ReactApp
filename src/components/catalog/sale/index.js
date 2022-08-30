@@ -13,7 +13,7 @@ function Sale (){
         const saleIndicator = document.querySelector('.sale-slider')
         saleIndicator.childNodes[0].classList.add('active')
         setInterval(()=>{
-            if (i <= 1){
+            if (i <= (arrImg.length-2)){
                 i ++
                 setSaleImg(arrImg[i])
             }else{

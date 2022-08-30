@@ -19,12 +19,12 @@ function PromoSlide (){
         const target = e.target
         if (target.getAttribute('id') == 'slider-right'){
             
-            if (slideCount < 2 ){
+            if (slideCount < (arrSlide.length - 1)){
             setSlideCount(slideCount+1)
             setSliderImg(arrSlide[slideCount])
             setSlideMainText(arrSliderMainText[slideCount])
             setSlideDescriptionText(arrSliderDescriptionText[slideCount])
-            }else if (slideCount == (arrSlide.length - 1)){
+            }else{
                 setSlideCount(0)
                 setSliderImg(arrSlide[slideCount])
                 setSlideMainText(arrSliderMainText[slideCount])
