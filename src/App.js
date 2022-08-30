@@ -13,6 +13,7 @@ import ManView from "./view/manClothing";
 import WomanView from "./view/womanClothing";
 import BasketView from "./view/basket";
 import ProductView from "./view/product";
+import ErrorView from "./view/error";
 const App = () => {
 
     const [jewelery, setJewelery] = useContext(ContextJewelery)
@@ -44,6 +45,7 @@ const App = () => {
         { path: "/women", element: <WomanView/> },
         { path: "/basket", element: <BasketView/> },
         { path: "/product/:id", element: <ProductView/> },
+        { path: "*", element: <ErrorView/> },
         ])
     return router
 }
