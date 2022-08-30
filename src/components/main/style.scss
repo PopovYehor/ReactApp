@@ -1,0 +1,26 @@
+@import "../../var.scss";
+.main-wrap{
+    width: $page-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: $primary_color;
+    .main-title{
+      width: $container-width;
+      height: 45px;
+      align-items: center;
+      .main-title-text{
+        font-size: 24px;
+      }
+    }
+    .main-container{
+      width: $container-width;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 60px;
+      border-bottom: 2px solid $secondary_color;
+    }
+  }

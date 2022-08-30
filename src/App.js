@@ -1,20 +1,18 @@
-import './App.css';
-import Header from './components/header';
-import Content from './components/content';
-import {LeftMenu, activeMenu} from './components/leftMenu';
 
 
+import "./style.scss"
+import {useRoutes} from "react-router-dom"
 
-function App() {
-  return (
-    <div className='App'>
-    <Header title = "My Header" menuActive = {activeMenu}/>
-    <div className = "container">
-      <LeftMenu item ="Menu item"/>
-      <Content text = 'Content'/>
-    </div>
-    </div>
-  );
+import Main from "./view/main";
+import News from "./view/news";
+import Header from "./components/header";
+import Footer from "./components/footer";
+const App = () => {
+    const router = useRoutes([
+        { path: "/", element: <Main/> },
+        { path: "/news", element: <News/> },
+        ])
+    return router
 }
 
 export default App;

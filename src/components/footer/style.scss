@@ -1,0 +1,30 @@
+@import "../../var.scss";
+footer{
+    width: $page-width;
+    height: 200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 50px;
+    .footer-container{
+      width: $container-width;
+      display: flex;
+      flex-direction: row;
+      .footer-navigation-main{
+        width: 120px;
+        .footer-navigation-main-list{
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          font-size: 16px;
+          .footer-navigation-main-list-item{
+            margin-top: 10px;
+            .nav-item{
+              @include standart_A();
+            }
+          }
+          
+        }
+      }
+    }
+  }

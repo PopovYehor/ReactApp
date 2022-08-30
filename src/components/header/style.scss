@@ -1,0 +1,46 @@
+@import "../../var.scss";
+header{
+    width: $page-width;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: $primary_color;
+    
+    .header-container{
+      width: $container-width;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      border-bottom: 2px solid $secondary_color;
+      .header-title{
+        width: 205px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        .header-title-text{
+          a{
+            @include standart_A()
+          }
+          font-size: 24px;
+          margin-left: 10px;
+        }
+      }
+      .header-navigation{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: row;
+        width: 410px;
+        height: 40px;
+        .nav-item{
+          @include standart_A();
+          font-size: 22px;
+          margin-left: 30px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
