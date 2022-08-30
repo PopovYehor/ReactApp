@@ -39,17 +39,7 @@ const addToBasket = (e)=>{
     const btn = document.querySelectorAll('.catalog-item-buy-btn')
     let id = 0
     for (let i = 0; i<btn.length; i++){
-        if (target.parentNode.getAttribute('id') == btn[i].getAttribute('id')){
-            id = btn[i].getAttribute('id')
-            fetchProduct(id, btn, i)
-            break
-        }
-        else if(target.parentNode.parentNode.getAttribute('id') == btn[i].getAttribute('id')){
-            id = btn[i].getAttribute('id')
-            fetchProduct(id, btn, i)
-            break
-        }
-        else if (target.getAttribute('id') == btn[i].getAttribute('id')){
+        if (target.parentNode.getAttribute('id') == btn[i].getAttribute('id') || target.getAttribute('id') == btn[i].getAttribute('id')){
             id = btn[i].getAttribute('id')
             fetchProduct(id, btn, i)
             break
@@ -71,7 +61,7 @@ return(
                         <span className="catalog-item-price">{elem.price} $</span>
                     </div>
                     <div className="catalog-item-buy" id={elem.id}>
-                        <button id={elem.id} className={haveProduct.some(element => element == elem.id) ? "catalog-item-buy-btn active" : "catalog-item-buy-btn"} onClick={(e)=> addToBasket(e)}><FontAwesomeIcon icon={ faBasketShopping} /></button>
+                        <button id={elem.id} className={haveProduct.some(element => element == elem.id) ? "catalog-item-buy-btn active" : "catalog-item-buy-btn"} onClick={(e)=> addToBasket(e)}><FontAwesomeIcon id={elem.id} icon={ faBasketShopping} /></button>
                     </div>
                 </div>
             </div>

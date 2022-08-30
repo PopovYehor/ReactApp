@@ -1,6 +1,6 @@
 import React from "react";
 import './style.scss'
-import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll } from "store/context";
+import {  ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll} from "store/context";
 import { useEffect, useContext } from "react";
 import {useRoutes} from "react-router-dom"
 import { fetchContext } from "./helpers/fetchContext";
@@ -14,6 +14,7 @@ import WomanView from "./view/womanClothing";
 import BasketView from "./view/basket";
 import ProductView from "./view/product";
 const App = () => {
+
     const [jewelery, setJewelery] = useContext(ContextJewelery)
     const [electronic, setElectronic] = useContext(ContextElectronic)
     const [man, setMan] = useContext(ContextMan)

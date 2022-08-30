@@ -39,5 +39,12 @@
                 margin-left: 50px;
             } 
         }
+        .empty-cart{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 170px;
+            font-size: 40px;
+        }
     }
 }

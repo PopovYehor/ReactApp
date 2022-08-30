@@ -68,6 +68,7 @@
                     color: #fff;
                     font-size: 16px;
                     transition: all .5s;
+                    cursor: pointer;
                 }
                 .add-to-basket.active{
                     background-color: #4f7015;
@@ -75,28 +76,6 @@
                 .add-to-basket:hover{
                     background-color: #6c9b1c;
                 }   
-                .count-to-basket{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 45px;
-                    height: 45px;
-                    border: none;
-                    border-radius: 50%;
-                    background-color: #f1f0f0;
-                    font-size: 20px;
-                    transition: all .5s;
-                }
-                .count-to-basket:hover{
-                    background-color: #dbdbdb;
-                }    
-                .count-to-basket:nth-child(2){
-                    margin-left: 20px;
-                }
-                .count-to-basket-item{
-                    padding: 0 10px 0 10px;
-                    font-size: 27px;
-                }
                 
             }
         }

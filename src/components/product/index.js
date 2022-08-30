@@ -1,6 +1,4 @@
 import "./style.scss"
-import {BiPlus} from "@react-icons/all-files/bi/BiPlus"
-import {BiMinus} from "@react-icons/all-files/bi/BiMinus"
 import {useEffect, useContext, useState } from "react"
 import {ContextProductId, ContextBasketItems, ContextCartCount, ContextHaveProduct} from "store/context"
 import {fetchContext} from "helpers/fetchContext"
@@ -29,7 +27,9 @@ function Product (){
     
     const addToBasket = ()=>{
         const btn = document.querySelector('.add-to-basket')
-        fetchProduct(id, btn, )
+        fetchProduct(id, btn)
+        const have = haveProduct.some(element => element == product.id)
+        if (!have) setHaveProduct(item => [...item, product.id])
     }
     
     useEffect(()=>{
@@ -54,9 +54,6 @@ function Product (){
                         </div>
                         <div class="description-add-to-basket">
                             <button className={haveProduct.some(element => element == product.id) ? "add-to-basket active" : 'add-to-basket'} id={product.id} onClick={()=>addToBasket()}>Add to bsket</button>
-                            <div className="count-to-basket"><BiPlus/></div>
-                            <span className="count-to-basket-item">1</span>
-                            <div class="count-to-basket"><BiMinus/></div>
                         </div>
                     </div>
                 </div>

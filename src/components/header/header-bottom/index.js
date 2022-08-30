@@ -6,6 +6,8 @@ import {useContext} from "react"
 import {ContextCartCount} from "store/context"
 function HeaderBottom (){
     const [basketCount, setBasketCount] = useContext(ContextCartCount)
+
+    
     return(
 <div className="header-bottom-wrap">
     <div className="header-bottom-container">

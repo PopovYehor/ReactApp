@@ -1,6 +1,5 @@
 import "./style.scss"
 import BasketItem from "./basket-item"
-
 import {useContext, useState, useEffect} from "react"
 import {ContextBasketItems} from "store/context"
 function Basket (){
@@ -16,12 +15,12 @@ useEffect(()=>{
               }, 0)
         )
     })
-}, [sum])
+}, [basketItems])
   
 return(
 <div class="basket-items-wrap">
     <div className="basket-container">
-        {basketItems ? <BasketItem/> : <p className="empty-cart-text">Cart is empty</p>}
+        {basketItems.length > 0 ? <BasketItem/> : <div className="empty-cart"><p className="empty-cart-text">Cart is empty</p></div>}
         <div class="result-price">
             <button class="add-to-basket">To order</button>
             <p class="result-price-text">Total: <span class="result-price-item">{sum} $</span></p>

@@ -10,4 +10,6 @@ const ContextCartCount = React.createContext()
 const ContextBasketItems = React.createContext()
 const ContextHaveProduct = React.createContext()
 
-export { ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll, ContextProductId, ContextCartCount, ContextBasketItems, ContextHaveProduct }
+
+
+export { ContextJewelery, ContextElectronic, ContextMan, ContextWoman, ContextAll, ContextProductId, ContextCartCount, ContextBasketItems, ContextHaveProduct}
