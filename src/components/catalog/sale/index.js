@@ -20,7 +20,7 @@ function Sale (){
                 i = 0
                 setSaleImg(arrImg[i])
             }
-        }, 10000)
+        }, 5000)
         
     }, [])
     

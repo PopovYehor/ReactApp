@@ -1,9 +1,11 @@
 import Header from "components/header";
 import CatalogTitle from "components/catalog/catalog-title"
 import CatalogItem from "components/catalog/catalog-item"
+import Sale from "components/catalog/sale"
 import Footer from "components/footer";
 import { useContext } from "react";
 import {ContextMan} from "store/context"
+
 function ManView (){
     const [man, setMan] = useContext(ContextMan)
     return(
@@ -14,6 +16,7 @@ function ManView (){
                 <CatalogTitle text = {'Man`s clothing'}/>
                 <CatalogItem data = {man}/>
             </div>
+            <Sale/>
         </div>
         <Footer/>
         </div>

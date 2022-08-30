@@ -4,6 +4,8 @@ import { useContext } from "react";
 import CatalogTitle from "components/catalog/catalog-title"
 import CatalogItem from "components/catalog/catalog-item"
 import {ContextAll} from "store/context"
+import Sale from "components/catalog/sale"
+
 function CatalogView (){
     const [allProduct, setAllProduct] = useContext(ContextAll)
     return(
@@ -14,6 +16,7 @@ function CatalogView (){
                 <CatalogTitle text = {'Catalog'}/>
                 <CatalogItem data = {allProduct}/>
             </div>
+            <Sale/>
         </div>
         <Footer/>
         </div>

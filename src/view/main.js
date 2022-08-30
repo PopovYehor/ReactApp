@@ -6,6 +6,7 @@ import CatalogTitle from "components/catalog/catalog-title"
 import CatalogItem from "components/catalog/catalog-item"
 import { useContext } from "react";
 import {ContextMan, ContextJewelery, ContextElectronic, ContextWoman} from "store/context"
+
 function MainView (){
     const [jewelery, setJewelery] = useContext(ContextJewelery)
     const [electronic, setElectronic] = useContext(ContextElectronic)

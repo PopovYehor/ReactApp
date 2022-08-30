@@ -4,6 +4,8 @@ import CatalogTitle from "components/catalog/catalog-title"
 import CatalogItem from "components/catalog/catalog-item"
 import { useContext } from "react";
 import {ContextElectronic} from "store/context"
+import Sale from "components/catalog/sale"
+
 function ElectronicsView (){
     const [electronic, setElectronic] = useContext(ContextElectronic)
     return(
@@ -14,6 +16,7 @@ function ElectronicsView (){
                 <CatalogTitle text = {'Electronic'}/>
                 <CatalogItem data = {electronic}/>
             </div>
+            <Sale/>
         </div>
         <Footer/>
         </div>

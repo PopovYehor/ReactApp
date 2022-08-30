@@ -4,6 +4,8 @@ import CatalogItem from "components/catalog/catalog-item"
 import Footer from "components/footer";
 import { useContext } from "react";
 import {ContextJewelery} from "store/context"
+import Sale from "components/catalog/sale"
+
 function JeweleryView (){
     const [jewelery, setJewelery] = useContext(ContextJewelery)
     return(
@@ -14,6 +16,7 @@ function JeweleryView (){
                 <CatalogTitle text = {'Jewelery'}/>
                 <CatalogItem data = {jewelery}/>
             </div>
+            <Sale/>
         </div>
         <Footer/>
         </div>
