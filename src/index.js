@@ -1,15 +1,16 @@
 import React from "react";
 import App from "./app";
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from "react-router-dom"
+import store from "./store/store";
+import {Provider} from "react-redux";
 function Init() {
 
 
     return (
             <React.StrictMode>
-                <Router>
+                <Provider store={store}>
                     <App/>
-                </Router>
+                </Provider>
            </React.StrictMode>
     )
 }

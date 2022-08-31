@@ -1,18 +1,25 @@
 
-
 import "./style.scss"
-import {useRoutes} from "react-router-dom"
-
-import Main from "./view/main";
+import {useRoutes, Routes, BrowserRouter} from "react-router-dom"
+import { Route, Switch } from "react-router"
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import News from "./view/news";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import LoginView from "./view/login";
+import ProfileView from "./view/profile";
+import Main from "./view/main"
 const App = () => {
-    const router = useRoutes([
-        { path: "/", element: <Main/> },
-        { path: "/news", element: <News/> },
-        ])
-    return router
+    const login = useSelector(state => state.users.login)  
+    return (
+    <>
+    <BrowserRouter>
+        <Routes> 
+            <Route path="/" element = {<Main/>}/>
+            <Route path="/news" element = {<News/>}/>
+            <Route path="/profile" element = {login ? <ProfileView/> : <LoginView/>}/>
+        </Routes>
+    </BrowserRouter>
+    </>
+    )
 }
 
 export default App;

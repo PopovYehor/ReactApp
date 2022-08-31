@@ -1,5 +1,5 @@
 {
-  "name": "webpack",
+  "name": "react_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VolynetsPanda/webpack.git"
+    "url": "git+https://github.com/PopovYehor/ReactApp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VolynetsPanda/webpack/issues"
+    "url": "https://github.com/PopovYehor"
   },
-  "homepage": "https://github.com/VolynetsPanda/webpack#readme",
+  "homepage": "https://github.com/PopovYehor",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -32,7 +32,10 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0"
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-provider": "^1.0.29"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

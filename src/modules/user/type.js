@@ -1,0 +1,5 @@
+const LOG_IN = "LOG_IN"
+const USER_DATA = "USER_DATA"
+const LOGIN_BTN = "LOGIN_BTN"
+
+export {LOG_IN, USER_DATA, LOGIN_BTN}
