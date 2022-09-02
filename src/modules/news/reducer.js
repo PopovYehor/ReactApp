@@ -17,9 +17,9 @@ const defaultState = {
 const reducerNews = (state = defaultState, action) => {
     switch (action.type){
         case ADD_TOP_NEWS:
-            return {...state, top: [...state.top, ...action.payload]}
+            return {...state, top: [action.payload, ...state.top]}
         case ADD_DAY_NEWS:
-            return {...state, top: [...state.top, ...action.payload]}
+            return {...state, day: [action.payload, ...state.top ]}
         
         default:
             return state
