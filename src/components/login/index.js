@@ -11,6 +11,7 @@ function Login (){
     const data = {
         login: 'Admin',
         password: '12345',
+        img: 'https://www.interlinecenter.com/wp-content/uploads/2016/10/dummy-user-img.png',
         name: "Yehor",
         surname: "Popov",
         profesion: "JavaScript Junior Developer",

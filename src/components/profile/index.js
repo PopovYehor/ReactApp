@@ -7,7 +7,7 @@ function Profile (){
             <div className="profile-item-wrap">
                 <div className="profile-item">
                     <div className="profile-item-img-wrap">
-                        <img className="profile-item-img" src="https://www.interlinecenter.com/wp-content/uploads/2016/10/dummy-user-img.png"></img>
+                        <img className="profile-item-img" src={user.img}></img>
                     </div>
                     <div className="profile-info-wrap">
                         <div className="profile-info-name">
