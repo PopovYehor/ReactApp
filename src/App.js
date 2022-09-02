@@ -1,7 +1,7 @@
 
 import "./style.scss"
-import {useRoutes, Routes, BrowserRouter} from "react-router-dom"
-import { Route, Switch } from "react-router"
+import {Routes, BrowserRouter} from "react-router-dom"
+import { Route} from "react-router"
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import News from "./view/news";
 import LoginView from "./view/login";
@@ -15,7 +15,7 @@ const App = () => {
         <Routes> 
             <Route path="/" element = {<Main/>}/>
             <Route path="/news" element = {<News/>}/>
-            <Route path="/profile" element = {login ? <ProfileView/> : <LoginView/>}/>
+            <Route path={login ? "/profile" : "/login"} element = {login ? <ProfileView/> : <LoginView/>}/>
         </Routes>
     </BrowserRouter>
     </>

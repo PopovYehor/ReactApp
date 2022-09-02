@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { useDispatch} from "react-redux/es/exports"
+import { useNavigate } from "react-router-dom"
 import "./style.scss"
 function Login (){
     const [loginText, setLoginText] = useState('')
     const [passText, setPassText] = useState('')
     const [loginValidate, setLoginValidate] = useState(true)
-
     const dispatch = useDispatch()
-    
+    const navigate = useNavigate() 
     const data = {
         login: 'Admin',
         password: '12345',
@@ -41,6 +41,7 @@ function Login (){
             sessionStorage.setItem('login', true)
             sessionStorage.setItem('loginText', "Account")
             sessionStorage.setItem('userData', JSON.stringify(data))
+            navigate("/profile")
         }
     }
     return(
